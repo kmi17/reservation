@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController {
-
-    @Autowired
     private LoginService loginService;
 
+    @Autowired
+    public void setInjectedBean(LoginService loginService) {
+        this.loginService = loginService;
+    }
     public void login(@RequestBody LoginRequest loginRequest){
+
         loginService.login(loginRequest);
     }
-
 
 }
