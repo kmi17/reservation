@@ -15,7 +15,7 @@ public class LoginController {
     private LoginService loginService;
 
     @Autowired
-    public void setInjectedBean(LoginService loginService) {
+    public LoginController(LoginService loginService) {
         this.loginService = loginService;
     }
     public void login(@RequestBody LoginRequest loginRequest){
